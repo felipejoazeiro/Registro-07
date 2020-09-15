@@ -4,11 +4,11 @@
         {% block head %}
             <title>Launch Store</title>
         {% endblock %}
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
-        <link rel="stylesheet" href="/style.css">
+        {%include "parts/styles.njk"%}
     </head>
     <body>
         {%include 'parts/header.njk'%}
+        {%include "parts/messages.njk"%}
         {% block content %}
         {% endblock content %}
         {%include 'parts/footer.njk'%}
