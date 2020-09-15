@@ -16,7 +16,7 @@ routes.get('/password-reset', SessionController.resetForm)
 routes.post('/forgot-password', SessionController.forgot)
 routes.post('/password-reset', SessionController.reset)
 
-routes.get('/',UserController.show)
+
 routes.put('/', UserController.update)
 routes.delete('/', UserController.delete)
 */
@@ -24,5 +24,6 @@ routes.delete('/', UserController.delete)
 //user register
 routes.get('/register', UserController.registerForm)
 routes.post('/register', Validator.post , UserController.post)
+routes.get('/',UserController.show)
 
 module.exports = routes

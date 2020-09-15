@@ -29,7 +29,6 @@ async function post(req,res,next){
         user: req.body,
         error: 'Senha incorreta'
     })
-    res.send('Concluído')
     next()
 }
 module.exports = {

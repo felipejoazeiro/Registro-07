@@ -2,12 +2,17 @@ const db = require('../../config/db')
 
 module.exports = {
     all(){
-        return db.query(`
-            SELECT * FROM products ORDER BY updated_at DESC
-        `)
+        try{
+            const query = `SELECT * FROM products ORDER BY updated_at DESC
+            `
+            return db.query(query)
+        }catch(err){
+            console.error(err)
+        }
     },
     create(data){
-        const query = `
+        try{
+            const query = `
             INSERT INTO products(
                 category_id,
                 user_id,
@@ -32,6 +37,9 @@ module.exports = {
             data.status || 1
         ]
         return db.query(query,values)
+        }catch(err){
+            console.error(err)
+        }
     },
     find(id){
         return db.query(`SELECT * FROM products WHERE id = $1`,[id])
