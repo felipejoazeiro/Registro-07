@@ -17,13 +17,14 @@ routes.post('/forgot-password', SessionController.forgot)
 routes.post('/password-reset', SessionController.reset)
 
 
-routes.put('/', UserController.update)
 routes.delete('/', UserController.delete)
 */
 
 //user register
 routes.get('/register', UserController.registerForm)
 routes.post('/register', Validator.post , UserController.post)
-routes.get('/',UserController.show)
+routes.get('/',Validator.show ,UserController.show)
+routes.put('/', UserController.update)
+
 
 module.exports = routes
